@@ -63,8 +63,9 @@ function AppSidebar() {
 
   return (
     <Sidebar>
-      <SidebarHeader className={'p-4'}>
-            <Image src={'/logo.svg'} alt='logo' width={130} height={120}/>
+      <SidebarHeader className={'p-4 flex items-center gap-2'}>
+            <Image src={'/plmunlogo.png'} alt='logo' width={50} height={40}/>
+            <span className="font-semibold text-lg hidden md:block">PLMUN AI Tutor</span>
       </SidebarHeader>
 
       <SidebarContent>

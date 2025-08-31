@@ -18,6 +18,7 @@ const AI_Tutor = () => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
+
   // Smarter fake AI
   const fakeAIResponse = (question) => {
     const lower = question.toLowerCase();
