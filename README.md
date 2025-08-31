@@ -116,6 +116,56 @@ export default defineConfig({
 
 install npm i anxios
 
+
+Your app is trying to connect to a database using the Neon service, but you haven't provided the required connection string in your environment variables on Vercel.
+
+💡 Fix it in 3 Steps:
+1. Get Your Database Connection String
+
+If you're using Neon
+, go to your Neon dashboard → select your project → copy the connection string (usually starts with postgres://).
+
+2. Add the Env Variable to Vercel
+
+Go to your Vercel dashboard
+.
+
+Click on your project.
+
+Go to the Settings tab → Environment Variables.
+
+Click "Add":
+
+Key: DATABASE_URL or whatever your code expects (e.g. NEON_URL)
+
+Value: paste your Neon connection string
+
+Environment: Select Production (and Preview if needed)
+
+3. Trigger a new deployment
+
+After saving the environment variable:
+
+Go back to the Deployments tab
+
+Click “Redeploy”
+
+✅ Optional: Make sure your .env file matches
+
+If you're using .env locally, it should contain:
+
+DATABASE_URL=postgres://your-neon-connection-string
+
+
+And in your code (example):
+
+import { neon } from '@neondatabase/serverless'
+
+const sql = neon(process.env.DATABASE_URL!) // or process.env.NEON_URL
+
+
+Let me know if you're not using Neon or unsure what your connection string should be.
+
  -->
 
 
